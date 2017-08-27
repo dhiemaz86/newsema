@@ -1,0 +1,35 @@
+table{
+	text-align: center;
+	text-decoration: none;
+}
+table a{
+	color: black;
+}
+table a:hover{
+	color: black;
+	text-decoration: none;
+}
+table th{
+	align-self: center;
+	color: white;
+	background: purple;
+	text-align: center;
+	font-size: 15px;
+}
+
+
+table td{
+	color: black;
+	background: #ececec;
+}
+#tdlog{
+	font-weight: bolder;
+	color: white;
+	background: red;
+	text-align: center;
+	font-size: 15px;
+}
+#lg{
+	text-decoration: none;
+	color: white;
+}

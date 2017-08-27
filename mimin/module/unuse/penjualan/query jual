@@ -1,0 +1,9 @@
+pelanggan : nama, alamat, email, no hp
+jual : status, tgl jual
+detail jual : jumlah, subtotal
+kopi : nama kopi, harga
+
+select nama, alamat, email, no_hp, tgl_jual, nama_kopi, harga, jumlah, subtotal, status from pelanggan
+join jual on pelanggan.id_pelanggan = jual.id_pelanggan
+join detail_jual on jual.id_jual = detail_jual.id_jual
+join kopi on detail_jual.id_kopi = kopi.id_kopi

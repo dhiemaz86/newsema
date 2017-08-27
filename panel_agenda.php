@@ -1,0 +1,45 @@
+<?php 
+echo'<div  style="width: 250px">';
+   
+
+echo '<div class="judul-agenda"  style="width: 223px;">
+<div class="nvhead">Agenda</div>
+      </div>
+
+<table  rules="rows" border="0" style="background-color: #fff; width: 222px;">
+<tr>
+<th> <div id="gbl"> Waktu </div> </th>
+<th>Acara</th>
+</tr>
+<tr>';
+ 
+
+   
+$batas=10;
+
+if(empty($paging))
+	{
+	$posisi=0;
+	$paging=1;
+	}
+
+else{
+	$posisi=($paging-1) * $batas;
+	}
+$query=mysql_query("select * from kategori,berita 
+where berita.id_kategori=2=kategori.id_kategori order by id_berita desc  limit $posisi,$batas");
+while($r=mysql_fetch_array($query))
+ {
+	$idberita   =  "".$r['id_berita']." ";
+	$md5id = md5($idberita);
+	$token = md5(md5($idberita).md5('kata acak'));
+
+echo "
+ <td style= padding:10px;>".$r['tgl_agenda']." <br></td>
+ <td style= height:30px;><a href='readmore.php?id=$idberita&token=$token'>".$r['judul_berita']." <br></a><br> </td>
+ </tr>";
+ }
+echo '</table>;
+</div> ';
+
+?>
